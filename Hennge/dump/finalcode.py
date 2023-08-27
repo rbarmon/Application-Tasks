@@ -6,6 +6,24 @@ import pyotp
 import time
 import requests
 
+#
+# def generate_totp_password(shared_secret):
+#     time_interval = 30
+#     t0 = 0
+#     current_time = int(time.time())
+#     time_steps = (current_time - t0) // time_interval
+#     time_steps_bytes = struct.pack(">Q", time_steps)
+#
+#     hmac_sha512 = hmac.new(shared_secret.encode(), time_steps_bytes, hashlib.sha512).digest()
+#
+#     offset = hmac_sha512[-1] & 0x0F
+#     truncated_hash = hmac_sha512[offset:offset + 8]
+#     totp_integer = struct.unpack(">Q", truncated_hash)[0]
+#
+#     mask = 0x7FFFFFFFFFFFFF  # 63 bits set to 1
+#     totp_integer &= mask
+#
+#     return str(totp_integer % 10**10).zfill(10)
 
 def generate_totp_password(shared_secret):
     time_interval = 30
@@ -33,7 +51,7 @@ import hashlib  # Import hashlib to use the HMAC-SHA-512 hash function
 
 def python_totp():
     # Replace "ninja@example.comHENNGECHALLENGE003" with your actual shared secret.
-    shared_secret = ""
+    shared_secret = "rbar0032@student.monash.eduHENNGECHALLENGE003"
     encoded_secret = base64.b32encode(shared_secret.encode()).decode()
     print("Base32 Encoded Secret:", shared_secret)
 
@@ -57,6 +75,14 @@ def main():
     # Replace "ninja@example.comHENNGECHALLENGE003" with your actual shared secret.
     # shared_secret = "ninja@example.comHENNGECHALLENGE003"
     shared_secret = "rbar0032@student.monash.eduHENNGECHALLENGE003"
+    # shared_secret = "rabchuunyuu@gmail.comHENNGECHALLENGE003"
+
+    # totp_password = generate_totp_password(shared_secret)
+    # Create a TOTP object with the shared secret
+    # totp = pyotp.TOTP(shared_secret, interval=30)
+    #
+    # # Get the current TOTP password
+    # totp_password = totp.now()
 
     totp_password = python_totp()
     print(totp_password)
