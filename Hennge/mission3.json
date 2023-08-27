@@ -1,0 +1,46 @@
+{
+  "github_url": "https://gist.github.com/rbarmon/35d7fed1d7ee4e196fcef74d37f21fbe",
+  "contact_email": "rbar0032@student.monash.edu",
+  "solution_language": "python"
+}
+
+https://api.challenge.hennge.com/challenges/003
+
+POST /challenges/003 HTTP/1.1
+Authorization: Basic bmluamFAZXhhbXBsZS5jb206MTU5NTk0MjU2MA==
+Host: api.challenge.hennge.com
+Accept: */*
+Content-Type: application/json
+Content-Length: 133
+
+{"github_url": "https://gist.github.com/rbarmon/35d7fed1d7ee4e196fcef74d37f21fbe","contact_email": "rbar0032@student.monash.edu","solution_language": "python"}
+
+curl -X POST -d "key1=value1&key2=value2" https://api.challenge.hennge.com/challenges/003
+
+
+
+POST /echo/post/json HTTP/1.1
+Authorization: Basic bmluamFAZXhhbXBsZS5jb206MTU5NTk0MjU2MA==
+userid rbar0032@student.monash.edu
+password  provide a 10-digit time-based one time password conforming to RFC6238 TOTP
+Host: https://api.challenge.hennge.com/challenges/003
+Accept: application/json
+Content-Type: application/json
+Content-Length: 81
+      
+{
+  "Id": 78912,
+  "Customer": "Jason Sweet",
+  "Quantity": 1,
+  "Price": 18.00
+}
+
+
+POST /challenges/003 HTTP/1.1
+Authorization: Basic bmluamFAZXhhbXBsZS5jb206MTU5NTk0MjU2MA==
+Host: api.challenge.hennge.com
+Accept: */*
+Content-Type: application/json
+Content-Length: 133
+
+{"github_url":"https://gist.github.com/hennge/b859bd12e7a7fb418141","contact_email":"ninja@example.com","solution_language":"golang"}
